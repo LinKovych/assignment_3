@@ -1,0 +1,18 @@
+<table ng-if="!menu.isEmpty() && menu.flag">
+	<tr>
+		<th><p>NAME</p></th>
+		<th><p>SHORTNAME</p></th>
+		<th><p>DESCRIPTION</p></th>
+	</tr>
+	<tr ng-repeat="item in menu.items">
+		<td><p>{{ item.name }} </p></td>
+		<td><p>{{ item.short_name }}</p> </td>
+		<td><p>{{ item.description }} </p></td>
+		<td><p><button ng-click="menu.onRemove({index: $index});">
+		Don't want this one!
+		</button></p></td>
+	</tr>
+</table>
+<div ng-if="menu.isEmpty() && menu.flag" class="nothing">
+	<p>Nothing found</p>
+</div>
